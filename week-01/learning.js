@@ -16,3 +16,23 @@ function total(...theNumbers){
 	}
 	return sum
 }
+
+/* extra practice code */
+
+console.log("")
+
+function addition(addend,addend2) {
+	sum = (addend + addend2)
+	return sum
+}
+
+sum = addition(1,1)
+console.log("1 + 1 = " + sum);
+
+function subtraction(minuend,subtrahend) {
+	difference = (minuend - subtrahend)
+	return difference
+}
+
+difference = subtraction(1,1)
+console.log("1 - 1 = " + difference);
