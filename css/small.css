@@ -1,0 +1,57 @@
+html {
+    background-color: #111111;    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #cccccc;
+}
+
+
+body {
+
+}
+
+#content {
+    max-width: 300px;
+    margin: auto;    
+    padding: 1em;
+}
+
+header {
+    text-align: center;
+}
+
+
+main {
+    
+}
+
+footer {
+    margin-top: 2em;
+    text-align: center;
+}
+
+h1 {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: skyblue;
+    color: #111111;
+    padding: .25em;
+    border-radius: 15px;
+}
+
+h1::before {
+    content: "- ";
+}
+
+h1::after {
+    content: " -";
+}
+
+a, a:visited {
+    font-weight: 700;
+    color: #eee;
+    transition: .5s;
+}
+
+a:hover {
+    color: skyblue;
+    transition: .5s;
+}
