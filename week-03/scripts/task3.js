@@ -171,9 +171,8 @@ const sumOMultipliedElement = document.getElementById('sumOfMultiplied');
 sumOMultipliedElement.innerHTML = sumOfMultipliedByTwo
 
 
-
-/* set links without chaning HTML */
-
+// extra //
+/* set links without changing HTML */
 
 const HomeLinkElement = document.getElementById('menu')
 
