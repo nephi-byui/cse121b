@@ -181,5 +181,5 @@ links = document.getElementsByTagName('a')
 console.log(links)
 
 //
-// links[1].href = "../week-01/hello.html"
+links[1].href = "../"
 links[2].href = "../week-02/task2.html"
