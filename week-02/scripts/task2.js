@@ -51,7 +51,7 @@ function arraysFunction() {
         for (let i = 0; i < favorite_foods.length; i++) {
         string += [i+1]+ ". " + favorite_foods[i] + "<br>"
         }
-    foodsElement.innerHTML = string
+        foodsElement.innerHTML = string
     }
     
     updateFoods()
