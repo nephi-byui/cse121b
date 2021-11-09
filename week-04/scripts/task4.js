@@ -100,6 +100,7 @@ function populateFoods() {
 
 function populateHobbies() {
 
+    // clear list first
     const hobbiesListElement = document.getElementById("hobbies")
     hobbiesListElement.innerHTML = ""
 
@@ -111,12 +112,11 @@ function populateHobbies() {
     }
 }
 
-
-
 // Step 8: For each object in the <em>placesLived</em> property:
 
 function populatePlaces() {
 
+    // clear list first
     const placesDlElement = document.getElementById("places-lived")
     placesDlElement.innerHTML = ""
 
