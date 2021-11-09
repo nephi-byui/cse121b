@@ -57,7 +57,6 @@ placeObject2 = {
 }
 bio.placesLived.push(placeObject2)
 
-console.log(bio)
 
 /* OUTPUT */
 
@@ -77,16 +76,79 @@ photoElement.alt = bio.name
 
 // Step 4: For each favorite food in the favoriteFoods property, create an HTML <li> element and place its value in the <li> element
 
-for 
-
 // Step 5: Append the <li> elements created above as children of the HTML <ul> element with an ID of favorite-foods
+    
+function populateFoods() {
+
+    // clear list first
+    const foodsListElement = document.getElementById("favorite-foods")
+    foodsListElement.innerHTML = ""
+
+    for (let i = 0; i < bio.favoriteFoods.length; i++) {        
+        var listItem = document.createElement("li");
+        food = bio.favoriteFoods[i]
+        listItem.appendChild(document.createTextNode(food));
+        foodsListElement.appendChild(listItem);
+    }
+}
+
+
 
 // Step 6: Repeat Step 4 for each hobby in the hobbies property
 
 // Step 7: Repeat Step 5 using the HTML <ul> element with an ID of hobbies
 
-// Step 8: For each object in the <em>placesLived</em> property:
-// - Create an HTML <dt> element and put its place property in the <dt> element
-// - Create an HTML <dd> element and put its length property in the <dd> element
+function populateHobbies() {
 
-// Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
+    const hobbiesListElement = document.getElementById("hobbies")
+    hobbiesListElement.innerHTML = ""
+
+    for (let i = 0; i < bio.hobbies.length; i++) {        
+        var listItem = document.createElement("li");
+        hobby = bio.hobbies[i]
+        listItem.appendChild(document.createTextNode(hobby));
+        hobbiesListElement.appendChild(listItem);
+    }
+}
+
+
+
+// Step 8: For each object in the <em>placesLived</em> property:
+
+function populatePlaces() {
+
+    const placesDlElement = document.getElementById("places-lived")
+    placesDlElement.innerHTML = ""
+
+    // - Create an HTML <dt> element and put its place property in the <dt> element
+
+    for (let i = 0; i < bio.placesLived.length; i++) {        
+        var dt_element = document.createElement("dt");
+        place = bio.placesLived[i]["place"]
+        dt_element.appendChild(document.createTextNode(place));
+        placesDlElement.appendChild(dt_element);
+
+    // - Create an HTML <dd> element and put its length property in the <dd> element
+
+        var dd_element = document.createElement("dd");
+        length = bio.placesLived[i]["length"]
+        dd_element.appendChild(document.createTextNode(length));
+        placesDlElement.appendChild(dd_element);
+
+    // Step 9: Append the HTML <dt> and <dd> elements created above to the HTML <dl> element with an ID of places-lived
+
+    }
+}
+
+function styleImage() {
+    photoElement.style.maxWidth = "256px";
+    photoElement.style.borderRadius = "256px";
+}
+
+window.onLoad = (
+    populateFoods(),
+    populateHobbies(),
+    populatePlaces(),    
+    styleImage()
+    )
+
