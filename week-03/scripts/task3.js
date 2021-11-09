@@ -123,7 +123,7 @@ year = today.getFullYear();
 // Step 4: Assign the current year variable to an HTML form element with an ID of year
 
 const yearElement = document.getElementById('year');
-yearElement.value = year
+yearElement.innerHTML = year
 
 /* ARRAY METHODS */
 
