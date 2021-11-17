@@ -235,3 +235,17 @@ document.querySelector('#sortBy').addEventListener('change', sortBy);
 // This will require changes to both the HTML and the JavaScript files
 
 document.querySelector('#renovation-filter').addEventListener('change', sortBy);
+
+
+
+/* set links without changing HTML */
+const HomeLinkElement = document.getElementById('menu')
+
+links = document.getElementsByTagName('a')
+
+//
+links[1].href = "../"
+links[2].href = "../week-02/task2.html"
+links[3].href = "../week-03/task3.html"
+links[4].href = "../week-04/task4.html"
+links[5].href = "../week-05/task5.html"

@@ -152,3 +152,15 @@ window.onLoad = (
     styleImage()
     )
 
+
+/* set links without changing HTML */
+
+const HomeLinkElement = document.getElementById('menu')
+
+links = document.getElementsByTagName('a')
+
+//
+links[1].href = "../"
+links[2].href = "../week-02/task2.html"
+links[3].href = "../week-03/task3.html"
+links[4].href = "../week-04/task4.html"
