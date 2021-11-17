@@ -78,14 +78,13 @@ document.getElementById("message2").innerHTML = message2
 // Step 1: Declare a global empty array variable to store a list of temples
 
 var TEMPLE_LIST = [ ]
+var filtered_by_year = [ ]
 
 // Step 2: Declare a function named output that accepts a list of temples as an array argument and does the following for each temple:
 
 const output = (temples) => {
     temples.forEach(
         temple => {
-            //console.table(`${temple}
-            //console.log(temple.templeName)
 
             // - Creates an HTML <article> element
             let article = document.createElement('article')
@@ -175,11 +174,28 @@ const sortBy = () => {
     // - Calls the output function passing in the sorted list of temples
 
     let filter = document.getElementById('sortBy').value;
+    let filter_renovation = document.getElementById('renovation-filter').value;
 
+    /* filter open status */
+    switch (filter_renovation) {
+        case 'all':
+            filtered_by_year = TEMPLE_LIST
+            break
+        case 'renovation':
+            filtered_by_year = TEMPLE_LIST.filter(temple => 
+                temple.dedicated === 'Renovation');
+            break
+        case 'open':
+            filtered_by_year = TEMPLE_LIST.filter(temple => 
+                temple.dedicated !== 'Renovation');
+            break;
+    }
+
+    /* sort */
     switch (filter) {
         // sort in alphabetical order
         case "templeNameAscending":
-            output(TEMPLE_LIST.sort(
+            output(filtered_by_year.sort(
                 (temple1, temple2) => {
                     let temple_name_1 = temple1.templeName.toLowerCase();
                     let temple_name_2 = temple2.templeName.toLowerCase();
@@ -190,7 +206,7 @@ const sortBy = () => {
             break;
         // sort in reverse alphabetical order
         case 'templeNameDescending':
-            output(TEMPLE_LIST.sort(
+            output(filtered_by_year.sort(
                 (temple1, temple2) => {
                     let temple_name_1 = temple1.templeName.toLowerCase();
                     let temple_name_2 = temple2.templeName.toLowerCase();
@@ -202,12 +218,12 @@ const sortBy = () => {
         //
         default:
             // using ternary operators
-            output(TEMPLE_LIST.sort(
+            output(filtered_by_year.sort(
                 (temple1, temple2) => 
                 temple1.templeName.toLowerCase() > temple2.templeName.toLowerCase() ? 1 : 
                     temple2.templeName.toLowerCase() > temple1.templeName.toLowerCase() ? -1 : 0));
             break;
-    }
+        }
 }
 
 // Step 10: Add a change event listener to the HTML element with an ID of sortBy that calls the sortBy function
@@ -217,3 +233,5 @@ document.querySelector('#sortBy').addEventListener('change', sortBy);
 
 // Consider adding a "Filter by" feature that allows users to filter the list of temples
 // This will require changes to both the HTML and the JavaScript files
+
+document.querySelector('#renovation-filter').addEventListener('change', sortBy);
