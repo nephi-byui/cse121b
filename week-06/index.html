@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+    <title>Password or Passphrase</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/refresh.png">
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+
+</head>
+
+<body>
+
+    <header>
+        <h1>pw vs. passphrase</h1>
+    </header>
+
+    <main>
+        
+        <div class="main-grid">
+
+        <div class="results">
+
+            <section>
+                <h2>Password:</h2>
+                <input id="password" type="text" readonly>
+                <button id="generate-password" class="refresh"><img src="images/refresh.png"></button>
+                <p>Strong passwords are hard to crack but also pretty hard to remember.</p>
+            </section>
+
+            <section>
+                <h2>Passphrase:</h2>
+                <input id="passphrase" type="text" readonly>
+                <button id="generate-passphrase" class="refresh"><img src="images/refresh.png"></button>
+                <p>A good passphrase is both secure and easy to remember.</p>
+            </section>
+
+        </div>
+
+        <div class="source">
+            <section>
+                <h2>Randomness Source</h2>
+                <label>
+                <select id="entropy-source">
+                    <option value="math-random">Your Browser</option>
+                    <option value="atmospheric">Atmospheric Pressure</option>
+                    <option value="user">User-supplied gibberish</option>
+                </select>
+                </label>
+            </section>
+
+            <div id="option-1-info">
+                <p>Psuedorandom numbers generated in your browser with JavaScript's Math.random().</p>
+            </div>
+
+            <div id="option-2-info" class="hidden">            
+                <p>Randomness will come from measurements of atmospheric pressure, courtesy of <a href="https://www.random.org/">random.org.</a></p>
+                <span id="option-2-log"></span>
+            </div>
+
+            <div id="option-3-info" class="hidden">
+                <p>Faceroll your keyboard and generate your own randomness.</p>
+                <span id="text-entropy">Mash your keyboard!</span>
+                <span id="option-3-log"></span>
+            </div>
+            
+        </div>
+
+        <div class="bottom-button">
+            <p>Press any key to generate new ones.</p>
+        </div>
+
+        </div>
+
+    </main> 
+ 
+    <footer>
+        <div class="footer-content">
+            <section class="footer-left">
+                <p>Copyright © 2021 NM</p>
+            </section>
+            <section class="footer-right">
+                <p>
+                </p>
+            </section>
+        </div>
+
+        <script src="js/scripts.js" defer></script>
+    </footer>
+
+</body>
+</html>
