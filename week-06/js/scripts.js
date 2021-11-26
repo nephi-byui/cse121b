@@ -160,6 +160,13 @@ const show_option_info = () => {
 
 var USER_SUPPLIED_ENTROPY
 
+random_rgb = () => {
+    r = getRandomInt(0,255)
+    g = getRandomInt(0,255)
+    b = getRandomInt(0,255)
+    return `rgb(${r}, ${g}, ${b})`
+    }
+
 const key_mash = () => {
     USER_MASH_INTEGERS.shift() // remove the first element
     var number = getRandomInt(0,100) // generate a new integer
@@ -168,10 +175,9 @@ const key_mash = () => {
 
     // provide visual feedback
     const EntropyElement = document.getElementById("text-entropy")
-    r = getRandomInt(0,255)
-    g = getRandomInt(0,255)
-    b = getRandomInt(0,255)
-    EntropyElement.style.color = `rgb(${r}, ${g}, ${b})`
+
+    EntropyElement.style.color = random_rgb()
+    EntropyElement.style.backgroundColor = random_rgb()
 }
 
 function getRandomInt(min=1, max=10) {

@@ -110,9 +110,14 @@ a:hover {
 }
 
 .source {
-    border-color: blue;
+    background-color: var(--red-orange);
 }
 
 .bottom-button {
     margin: 25px;
+}
+
+#text-entropy {
+    font-size: 15px;
+    padding: 5px
 }
